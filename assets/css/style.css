@@ -1,5 +1,6 @@
 .jumbotron {
-    background-color: #0f7519; /* Orange */
+    background-color: #0f7519;
+    /* Orange */
     color: #ffffff;
 }
 
@@ -81,4 +82,8 @@
 
 .item span {
     font-style: normal;
+}
+
+.angular-google-map-container {
+    height: 400px;
 }
