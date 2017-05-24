@@ -29,6 +29,9 @@
     color: #fff !important;
 }
 
+.home {
+  font-size: 27px;
+}
 .logo-small {
     color: #0f7519;
     font-size: 50px;
@@ -57,6 +60,7 @@
     width: 100%;
     height: 100%;
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 .carousel-control.right, .carousel-control.left {
@@ -82,8 +86,4 @@
 
 .item span {
     font-style: normal;
-}
-
-.angular-google-map-container {
-    height: 400px;
 }

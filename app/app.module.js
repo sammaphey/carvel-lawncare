@@ -1,3 +1,1 @@
-var app = angular.module('angularApp', ['ngRoute', 'ngAnimate']).config(function($locationProvider) {
-  // $locationProvider.hashPrefix('');
-});
+var app = angular.module('angularApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap']);

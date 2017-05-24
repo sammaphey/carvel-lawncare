@@ -1,30 +1,51 @@
-<div id="portfolio" class="container-fluid text-center">
+<div id="portfolio" class="container-fluid text-center" ng-controller="portfolioCtrl">
     <h2>Portfolio</h2>
     <div class="row text-center">
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="assets/img/lawn2.jpeg" alt="Paris">
-                <p><strong>Lawn Trimming</strong></p>
+                <img src="assets/img/edging.jpg" alt="edging">
+                <p><strong>Edging</strong></p>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="assets/img/lawn3.jpeg" alt="New York">
-                <p><strong>Leaf Removal</strong></p>
+                <img src="assets/img/lawn2.jpg" alt="lawn">
+                <p><strong>Lawn Maintenance</strong></p>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="assets/img/lawn1.jpeg" alt="San Francisco">
-                <p><strong>Mulching</strong></p>
+                <img src="assets/img/lawn1.jpg" alt="finished lawn">
             </div>
+            <div class="thumbnail">
+                <img src="assets/img/lawn.jpg" alt="finished lawn">
+            </div>
+            <p><strong>Clean Finish</strong></p>
         </div>
     </div>
 </div>
 
-<div class="container-fluid text-center bg-grey">
+<div class="container-fluid text-center bg-grey" ng-controller="portfolioCtrl as $ctrl">
     <h2>What our customers say</h2>
-    <button class="btn btn-sm">Add a Review!</button>
+    <button class="btn btn-md btn-default" ng-click="$ctrl.open('lg')">Add a Review!</button>
+
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    {{ item }}
+                </li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+        </div>
+    </script>
+
     <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
