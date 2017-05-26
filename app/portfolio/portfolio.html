@@ -29,33 +29,44 @@
     <h2>What our customers say</h2>
     <button class="btn btn-md btn-default" ng-click="$ctrl.open('lg')">Add a Review!</button>
 
+
     <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
-        </div>
-        <div class="modal-body" id="modal-body">
-            <ul>
-                <li ng-repeat="item in items">
-                    {{ item }}
-                </li>
-            </ul>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
-        </div>
+
+        <form id="reviewModal" method="POST" action="https://script.google.com/macros/s/AKfycbyD2v8h4GiB2zyFdvMZfGgerV4zJ-NEcm5Jipmf56wXfPNOdvIM/exec" ng-init="loaded()">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Type Your Review</h3>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                    </div>
+                    <div class="col-sm-12 form-group">
+                        <textarea class="form-control" id="message" name="message" placeholder="Comment" rows="5"></textarea><br>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="submit" class="btn btn-primary" type="submit" ng-click="ok()">Add Review</button>
+                    <button class="btn btn-danger" type="button" ng-click="cancel()">Cancel</button>
+                </div>
+        </form>
     </script>
 
     <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li ng-repeat="item in items track by $index" data-target="#myCarousel" data-slide-to="$index + 1"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 <h4>"Jason's knowledge and expertise of lawn beautification is like no other. His attention to detail and charming attitude makes him the best in the area. Would highly recommend to anyone"<br><span style="font-style:normal;">Clayton Pankewicz</span></h4>
+            </div>
+            <div class="item" ng-repeat="item in items">
+              <h4>"{{item.gsx$message.$t}}"<br><span style="font-style:normal;">{{item.gsx$name.$t}}</span></h4>
             </div>
         </div>
 
@@ -69,4 +80,4 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-</div>
+    </div>
