@@ -1,11 +1,11 @@
 app.controller("portfolioCtrl", function($scope, $uibModal, $http) {
 
-  $scope.myInterval = 3000;
+    $scope.myInterval = 3000;
 
-  $http.get('https://spreadsheets.google.com/feeds/list/1mSZtMHUd6WsUc1wT8vPyhfgZnhfJ3pVi80b3MjF2vGI/od6/public/values?alt=json').then(function(response) {
-    $scope.items = response.data.feed.entry;
-    console.log($scope.items);
-  });
+    $http.get('https://spreadsheets.google.com/feeds/list/1mSZtMHUd6WsUc1wT8vPyhfgZnhfJ3pVi80b3MjF2vGI/od6/public/values?alt=json').then(function(response) {
+        $scope.items = response.data.feed.entry;
+        console.log($scope.items);
+    });
 
     var $ctrl = this;
 
